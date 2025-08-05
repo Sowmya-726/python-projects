@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result h2, .result h3 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form method="POST">
+        <label for="height">Height (cm):</label>
+        <input type="number" name="height" step="any" required><br><br>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" name="weight" step="any" required><br><br>
+
+        <input type="submit" value="Calculate BMI">
+    </form>
+
+    {% if bmi %}
+        <h2>Your BMI: {{ bmi }}</h2>
+        <h3>Category: {{ category }}</h3>
+    {% endif %}
+</body>
+</html>
