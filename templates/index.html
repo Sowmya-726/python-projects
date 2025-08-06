@@ -56,7 +56,7 @@
             text-align: center;
         }
 
-        .result h2, .result h3 {
+        .result h2, .result h3, .result p {
             color: #333;
         }
     </style>
@@ -74,8 +74,12 @@
     </form>
 
     {% if bmi %}
-        <h2>Your BMI: {{ bmi }}</h2>
-        <h3>Category: {{ category }}</h3>
+        <div class="result">
+            <h2>Your BMI: {{ bmi }}</h2>
+            <h3>Category: {{ category }}</h3>
+            <p>Height entered: {{ height }} cm</p>
+            <p>Weight entered: {{ weight }} kg</p>
+        </div>
     {% endif %}
 </body>
 </html>
